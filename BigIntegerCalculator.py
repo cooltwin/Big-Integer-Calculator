@@ -1,5 +1,5 @@
 # Author: Twinkle Gupta
-# File Description : This project develops a program that implements arithmetic with large integers, of arbitrary size.
+# File Description : This program handles arithmetic operations on large integers of arbitrary size.
 #                    Negative numbers are not handled.
 # Date : Sept 23,2014
 

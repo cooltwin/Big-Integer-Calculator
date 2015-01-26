@@ -1,16 +1,21 @@
 # Big-Integer-Calculator
-This project enables addition, subtraction, multiplication and computing power of large integers. Here is a brief explanation of how the input command is processed –
+This project enables addition, subtraction, multiplication and computing power of large integers eg :- 124678964 ^ 2563943. 
 
-It somewhat uses the concept of infix to postfix conversion of an input string. It pushes any variable that it encounters while parsing the string and pops the variable whenever it encounters a operand +,-,*,^,?,= .
+INPUT AND OUTPUT 
 
-In case it encounters an “=”, it checks if the token next to “=” is a no or variabe. If it’s a no, pop the variable from the stack and convert the no to a string and assign it to the variable ( by putting it in a dictionary of variable to list mapping named as varToListDict in the code). On the other hand if it’s a var push it to the stack.
+The project somewhat uses the concept of infix to postfix conversion of an input string. It pushes any variable that it encounters while parsing the string and pops the variable whenever it encounters a operand +,-,*,^,?,= .
+
+In case if it encounters an “=”, it checks if the token next to “=” is a no or variabe. If it’s a no, pop the variable from the stack and convert the no to a string and assign it to the variable ( by putting it in a dictionary of variable to list mapping named as varToListDict in the code). On the other hand if it’s a var push it to the stack.
 
 Now when it encounters a +,-,*,^ it pops the first operand from the stack and finds its corresponding list and since the second operand is not yet pushed to the stack so it takes it directly from the input string and finds the corresponding list of it. Now it has got both so it performs the desired operation by calling the respective functions.
 
-If it encounters a ? , it reads the lineno from the input string ( input statement). Inorder to loop back I have maintained a list of input statements and prior to the processing of the input statements I have inserted them to this list. Now that we have the input statement list we can loop the lineno in a recursive manner going line by line.
+If it encounters a "?" , means it should loop back from certain line no mentioned in the input command (kind of looping command). For the same reasons it reads the lineno from the input string ( input statement). Inorder to loop back I have maintained a list of input statements prior to the processing of the input statements and inserted them to this list. Now that we have the input statement list we can loop the lineno in a recursive manner going line by line.
 
-If it encounters a command of type “var” it means that it should print the variable. So as I have explained earlier whenever the algorithm encounters a variab;e it pushes it to a variable stack(named varStack in the code). At the end of the processing function I am checking if the stack still has any variable then its this case so print the list corresponding to this variable ( Because in the other cases I
-have poped out the variables while computing them.So no other variables except the assignment ones will be in the stack).
+If it encounters a command of type “var” it means that it should print the variable. So as I have explained earlier whenever the algorithm encounters a variable it pushes it to a variable stack(named varStack in the code). At the end of the processing function I am checking if the stack still has any variable if so then print the list corresponding to this variable ( Because in the other cases I
+have poped out the variables while computing them. So no other variables except the assignment ones will be in the stack).
+
+-----------------------------------------------------------------------------------------------------------------------------
+HOW THE SYSTEM WORKS
 
 Add operation – Addition is simply adding each element of both the list in reverse order and take care of carry and keep adding the previous stage carry to next stage. Also at the end append the carry to the resultant list.
 

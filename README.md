@@ -3,9 +3,9 @@ This project enables addition, subtraction, multiplication and computing power o
 
 INPUT AND OUTPUT 
 
-The project somewhat uses the concept of infix to postfix conversion of an input string. It pushes any variable that it encounters while parsing the string and pops the variable whenever it encounters a operand +,-,*,^,?,= .
+The project uses the concept of infix to postfix conversion of an input string. It pushes any variable that it encounters while parsing the string and pops the variable whenever it encounters a operand +,-,*,^,?,= .
 
-In case if it encounters an “=”, it checks if the token next to “=” is a no or variabe. If it’s a no, pop the variable from the stack and convert the no to a string and assign it to the variable ( by putting it in a dictionary of variable to list mapping named as varToListDict in the code). On the other hand if it’s a var push it to the stack.
+In case if it encounters an “=”, it checks if the token next to “=” is a no or variabe. If it’s a no, pop the variable from the stack and convert the no to a string and assign it to the variable ( by putting it in a dictionary of variable to list mapping named as varToListDict in the code). On the other hand if it’s a variable push it to the stack.
 
 Now when it encounters a +,-,*,^ it pops the first operand from the stack and finds its corresponding list and since the second operand is not yet pushed to the stack so it takes it directly from the input string and finds the corresponding list of it. Now it has got both so it performs the desired operation by calling the respective functions.
 
